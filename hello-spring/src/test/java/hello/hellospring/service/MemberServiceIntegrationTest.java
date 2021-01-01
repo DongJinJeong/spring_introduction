@@ -25,10 +25,11 @@ class MemberServiceIntegrationTest {
 
     @Test
 //    @Commit 작성해주면 실제 DB에 등록된다.
-    void join() {
+    // Test는 한글로 작성 가능
+    void 회원가입() {
         // given
         Member member = new Member();
-        member.setName("spring123");
+        member.setName("spring");
 
         // when
         Long saveId = memberService.join(member);
