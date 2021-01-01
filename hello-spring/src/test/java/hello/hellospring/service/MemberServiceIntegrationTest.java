@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -23,10 +24,11 @@ class MemberServiceIntegrationTest {
     @Autowired MemberRepository memberRepository;
 
     @Test
+//    @Commit 작성해주면 실제 DB에 등록된다.
     void join() {
         // given
         Member member = new Member();
-        member.setName("spring");
+        member.setName("spring123");
 
         // when
         Long saveId = memberService.join(member);
